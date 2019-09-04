@@ -67,7 +67,7 @@ spec:
   runtime_assets:
     - sensu-go-hook-has-process-filter
   expressions:
-    - has_hook_process(even)
+    - has_hook_process(event)
 ```
 
 
