@@ -6,7 +6,7 @@ else
     VER=$(git rev-parse --short HEAD)
 fi
 
-RELEASE="sensu-go-has-hook-process-filter_${VER}"
+RELEASE="sensu-go-hook-has-process-filter_${VER}"
 CHECKSUM_TXT="${RELEASE}_sha512-checksums.txt"
 ARCHIVE="${RELEASE}.tar.gz"
 
