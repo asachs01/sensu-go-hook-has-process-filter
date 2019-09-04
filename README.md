@@ -1,7 +1,7 @@
 # sensu-go-hook-has-process-filter 
 [![Build Status](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter.svg?branch=master)](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter)
 
-This project is provides a filter library for evaluating the output of a Sensu [check hook](https://docs.sensu.io/sensu-go/latest/reference/hooks/) that gathers process table information.
+This is an experimental project that provides a filter library for evaluating the output of a Sensu [check hook](https://docs.sensu.io/sensu-go/latest/reference/hooks/) that gathers process table information.
 
 ## Configuration
 
