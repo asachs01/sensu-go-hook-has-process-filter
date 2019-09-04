@@ -1,0 +1,21 @@
+dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+language: node_js
+node_js:
+  - "12"
+cache:
+  yarn: true
+  directories:
+    - node_modules
+deploy:
+  - provider: script
+    script: bin/build.sh
+    skip_cleanup: true
+    on:
+      tags: true
+      branch: master

@@ -1,0 +1,8 @@
+fuction no_hook_processes(event) {
+    var check_hook_processes = [];
+    
+    if (event.hasOwnProperty("check") && event.check.hasOwnProperty("hooks") && event.check.hooks !== null) {
+        check_hook_processes = 
+    }
+    
+}

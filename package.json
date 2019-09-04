@@ -1,0 +1,32 @@
+{
+  "name": "sensu-go-has-process-filter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/has_hook_process.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine": "^3.4.0"
+  },
+  "devDependencies": {
+    "karma": "^4.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-jasmine": "^2.0.1"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asachs01/sensu-go-has-process-filter.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asachs01/sensu-go-has-process-filter/issues"
+  },
+  "homepage": "https://github.com/asachs01/sensu-go-has-process-filter#readme"
+}
