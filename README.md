@@ -1,13 +1,61 @@
-# sensu-go-hook-has-process-filter 
+[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/asachs01/sensu-go-hook-has-process-filter)
 [![Build Status](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter.svg?branch=master)](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter)
 
-This is an experimental project that provides a filter library for evaluating the output of a Sensu [check hook](https://docs.sensu.io/sensu-go/latest/reference/hooks/) that gathers process table information.
+## Sensu Go Hook has Process Filter Plugin
+
+- [Overview](#overview)
+- [Files](#files)
+- [Usage examples](#usage-examples)
+- [Configuration](#configuration)
+  - [Sensu Go](#sensu-go)
+    - [Asset registration](#asset-registration)
+    - [Asset definition](#asset-definition)
+    - [Check definition](#check-definition)
+    - [Hook definition](#hook-definition)
+    - [Event filter definition](#event-filter-definition)
+- [Sensu Core](#sensu-core)
+- [Installation from source](#installation-from-source)
+- [Additional notes](#additional-notes)
+- [Contributing](#contributing)
+
+## Overview
+
+This is an experimental project that provides a filter library for evaluating the output of a Sensu [check hook][1] that gathers process table information.
+
+## Files
+
+N/A
+
+## Usage examples
+
+N/A
 
 ## Configuration
+### Sensu Go
+#### Asset registration
 
-Let's start with an example check. In this case, we're checking the CPU of a group of given systems. Of note is the check hook "get_top_processes"
+Assets are the best way to make use of this plugin. If you're not using an asset, please consider doing so! If you're using sensuctl 5.13 or later, you can use the following command to add the asset: 
 
-**Example Check**
+`sensuctl asset add asachs01/sensu-go-hook-has-process-filter`
+
+If you're using an earlier version of sensuctl, you can download the asset definition from [this project's Bonsai asset index page][2].
+
+#### Asset definition
+
+```yaml
+---
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-go-hook-has-process-filter
+spec:
+  url: https://assets.bonsai.sensu.io/1a5f424fe60f0df2f98616ad455e112ea222086f/sensu-go-hook-has-process-filter_0.0.3.tar.gz
+  sha512: c05e89d7dee3a139714ad461e64098aa8c1474cb711803f4e06f51b9e4860c3ee0c55e14847503bdb91b24b85db8079025df35587f6b8cb678e14464595e0b42
+```
+
+#### Check definition
+
+This example checks the CPU of a group of given systems (note the check hook `get_top_processes`):
 
 ```yaml
 type: CheckConfig
@@ -34,9 +82,9 @@ spec:
   - system
 ```
 
-**Example Hook**
+#### Hook definition
 
-Here is the example hook. It just runs a `ps` command and does a bit of sorting by percent of CPU used.
+This example hook runs a `ps` command and does a bit of sorting by percent of CPU used:
 
 ```yaml
 type: HookConfig
@@ -53,7 +101,7 @@ spec:
   timeout: 60
 ```
 
-**Example Filter**
+#### Event filter definition
 
 ```yaml
 ---
@@ -70,4 +118,28 @@ spec:
     - has_hook_process(event)
 ```
 
+### Sensu Core
 
+N/A
+
+## Installation from source
+
+### Sensu Go
+
+See the instructions above for [asset registration](#asset-registration).
+
+### Sensu Core
+
+Install and setup plugins on [Sensu Core](https://docs.sensu.io/sensu-core/latest/installation/installing-plugins/).
+
+## Additional notes
+
+N/A
+
+## Contributing
+
+See the [Sensu Go repository CONTRIBUTING.md][3] for information about contributing to this plugin. 
+
+[1]: https://docs.sensu.io/sensu-go/latest/reference/hooks/
+[2]: https://bonsai.sensu.io/assets/asachs01/sensu-go-hook-has-process-filter
+[3]: https://github.com/sensu/sensu-go/blob/master/CONTRIBUTING.md
