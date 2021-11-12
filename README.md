@@ -1,3 +1,5 @@
+# NOTE: THIS PROJECT IS NO LONGER ACTIVELY MAINTAINED. IF YOU WISH TO USE IT, PLEASE FORK THE PROJECT.
+
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/asachs01/sensu-go-hook-has-process-filter)
 [![Build Status](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter.svg?branch=master)](https://travis-ci.org/asachs01/sensu-go-hook-has-process-filter)
 
